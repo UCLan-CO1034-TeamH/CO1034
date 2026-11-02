@@ -9,7 +9,7 @@ The rules:
     3. 🔩 – in progress;
     4. ✅ – done.
 
-"Social media" stands for Instagram, TikTok, YouTube. Accounts on all 3 of them have the "TreasurePleasureApp" username.
+"Social media" stands for Instagram, TikTok, YouTube. For TikTok, the username is "treasure.pleasure.app", and for the other two it's "TreasurePleasureApp".
 
 | ID | Task title | Subtask title | Assigned member (only for subtasks) | Depends on | Status |
 |----|------------|---------------|-----------------|------------|--------|
