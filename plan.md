@@ -14,6 +14,6 @@ The rules:
 | PR-001  | Keep promoting the project | ∅ | ∅ | ∅ | 😴 |
 | PR-002  | ∅ | Create accounts on social media | Seva | ∅ | 😴 |
 | PAG-001 | Create a landing page | ∅ | ∅ | ∅ | 🔩 |
-| PAG-002 | ∅ | Make the landing page explain the scope | Seva | ∅ | 🔩 |
-| APN-001 | ∅ | List the team members and their roles | Nikos | PAG-002 | ⛔ |
+| PAG-002 | ∅ | Make the landing page explain the scope | Seva | ∅ | ✅ |
+| APN-001 | ∅ | List the team members and their roles | Nikos | PAG-002 | 😴 |
 | APN-002 | ∅ | Refer to accounts on social media | Christos | PAG-002, PR-002 | ⛔ |
