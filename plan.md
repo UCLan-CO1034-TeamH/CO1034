@@ -2,7 +2,8 @@ The rules:
 1. Naming an ID:
     1. PAG must be used if the (sub)task involves creating a previously non-existent page, or heavily modify an exisitng page's layout;
     2. APN must be used for appending an existing page with additional elements;
-    3. PR must be used for activity related to Public Relations.
+    3. CLN is for deleting unused code, getting rid of unnecessary complications, and cleaning up in general;
+    4. PR must be used for activity related to Public Relations.
 2. Status:
     1. ⛔ – Blocked by an incomplete subtask it depends on;
     2. 😴 – is not blocked, but not in progress yet;
