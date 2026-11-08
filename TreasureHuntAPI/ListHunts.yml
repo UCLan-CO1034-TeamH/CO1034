@@ -1,0 +1,15 @@
+info:
+  name: ListHunts
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{API}}/list"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

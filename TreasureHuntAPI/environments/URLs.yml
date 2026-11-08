@@ -1,0 +1,4 @@
+name: URLs
+variables:
+  - name: API
+    value: https://codecyprus.org/th/api
