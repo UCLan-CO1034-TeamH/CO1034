@@ -23,3 +23,4 @@ The rules:
 | CLN-002 | ∅                         | Clean up CSS                            | Seva            | PAG-002         | ✅     |
 | APN-001 | ∅                         | List the team members and their roles   | Nikos           | PAG-002         | 🔩     |
 | APN-002 | ∅                         | Refer to accounts on social media       | Christos        | PAG-002, PR-002 | 🔩     |
+| EAS-001 | Introduce config for Bruno | ∅                                      | Seva            | ∅              | 🔩     |
