@@ -7,3 +7,6 @@ From now on, by "everyone" only those who show up are meant. Unless explicitly a
 
 2026-11-02:
 We met in the lab, and Seva taught Nikos and Christos how to work with a remote git repository using JetBrains' IDEs (WebStorm to be exact). Christos and Nikos are going to start working APN-002 and APN-001 respectively, according to the plan. Seva is yet to outline the next tasks for implementing the app.
+
+2026-11-09:
+Nikos didn't show up due to overlapping networking with other coursemates outside the building. Christos and Seva discussed the current progress of Nikos's and Christos's tasks, including barriers related to the lack of experience with multi-branch version control.
