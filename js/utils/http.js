@@ -2,11 +2,15 @@ function myFetch(url, method, body, pathVariables) {
     let urlSuffix = ""
     if (pathVariables.length > 0) {
         urlSuffix += "?"
-        pathVariables.forEach((pathVariable, index) => {
-            if (index != 0) {
-                urlSuffix += "&"
+        counter = 0
+        pathVariables.forEach(pathVariable => {
+            if (pathVariable.value !== undefined) {
+                if (counter != 0) {
+                    urlSuffix += "&"
+                }
+                urlSuffix += (pathVariable.name + "=" + pathVariable.value)
+                counter++
             }
-            urlSuffix += (pathVariable.name + "=" + pathVariable.value)
         });
     }
     return fetch(
