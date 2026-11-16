@@ -1,4 +1,4 @@
-export class SessionService {
+class SessionService {
 
     constructor(sessionId, huntApiService) {
         this.sessionId = sessionId

@@ -1,30 +1,28 @@
-function myFetch(url, method, body, pathVariables) {
-    let urlSuffix = ""
-    if (pathVariables.length > 0) {
-        urlSuffix += "?"
-        counter = 0
-        pathVariables.forEach(pathVariable => {
-            if (pathVariable.value !== undefined) {
-                if (counter != 0) {
-                    urlSuffix += "&"
-                }
-                urlSuffix += (pathVariable.name + "=" + pathVariable.value)
-                counter++
-            }
-        });
-    }
-    return fetch(
-        url + urlSuffix, {
-            method: method,
-            body: body
+async function myFetch(url, method, body, pathVariables = []) {
+    const params = new URLSearchParams()
+
+    pathVariables.forEach(pathVariable => {
+        if (pathVariable.value !== undefined) {
+            params.append(pathVariable.name, pathVariable.value)
         }
-    )
+    })
+
+    const queryString = params.toString()
+    const finalUrl = queryString ? `${url}?${queryString}` : url
+
+    const response = await fetch(finalUrl, {
+        method: method,
+        body: body
+    })
+
+    return response.json()
 }
 
-export function get(url, ...pathVariables) {
+
+function get(url, ...pathVariables) {
     return myFetch(url, "GET", undefined, pathVariables)
 }
 
-export function postForObject(url, object, ...pathVariables) {
-    return myFetch(url, "POST", JSON.stringify(body), pathVariables)
-}
+// function postForObject(url, object, ...pathVariables) {
+//     return myFetch(url, "POST", JSON.stringify(object), pathVariables)
+// }
