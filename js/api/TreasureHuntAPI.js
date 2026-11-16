@@ -66,7 +66,7 @@ export class TreasureHuntApiService {
         )
     }
 
-    getCurrentSCore(sessionId) {
+    getCurrentScore(sessionId) {
         return useGet(
             "/score",
             [{ name: "session", value: sessionId }]
