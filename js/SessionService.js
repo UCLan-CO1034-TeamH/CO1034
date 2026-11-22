@@ -25,12 +25,8 @@ class SessionService {
         return this.huntApiService.getCurrentScore(this.sessionId)
     }
 
-    fetchCurrentLeaderboard(sorted, limit = undefined) {
+    fetchCurrentLeaderboard(sorted = false, limit = undefined) {
         return this.huntApiService.fetchCurrentLeaderboardUsingSession(this.sessionId, sorted, limit)
-    }
-
-    fetchCurrentLeaderboard() {
-        return this.huntApiService.fetchCurrentLeaderboardUsingSession(this.sessionId)
     }
 
 }
