@@ -1,6 +1,5 @@
 class ActiveHunt {
-    constructor(uuid, sessionId, numberOfQuestions) {
-        this.uuid = uuid
+    constructor(sessionId, numberOfQuestions) {
         this.sessionId = sessionId
         this.numberOfQuestions = numberOfQuestions
     }

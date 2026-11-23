@@ -3,17 +3,6 @@
 const huntApiService = new TreasureHuntApiService()
 let sessionService = null;
 
-async function getAvailableHunts() {
-    let result = []
-    const hunts = await huntApiService.getAvailableHunts()
-    hunts.forEach(hunt => {
-        if (hunt.startsOn <= Date.now()) {
-            result.push(hunt)
-        }
-    });
-    return result
-}
-
 function browseOfficialGames() {
     const buttonBrowseOfficialGames = document.getElementById("browseOfficialGames")
     const loadingAvailableHunts = document.createElement("p")

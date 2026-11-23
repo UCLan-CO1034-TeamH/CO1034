@@ -4,18 +4,19 @@ const baseUrl = "https://codecyprus.org/th/api"
 
 const fetchCurrentLeaderboard = "/leaderboard"
 
-async function useGet(endpoint, responseToContentMapper, ...pathVariables) {
-    const response = await get(baseUrl + endpoint, ...pathVariables)
-    if (response.status === "OK") {
-        return responseToContentMapper(response)
-    } else {
-        let sum = ""
-        response.errorMessages.forEach((errorMessage, index) => {
-            sum += errorMessage
-            sum += index < response.errorMessages.length - 1 ? "; " : "."
-        });
-        throw new Error(sum)
-    }
+function useGet(endpoint, responseToContentMapper, ...pathVariables) {
+    return new Promise((resolve, reject) => {
+        try {
+            const response = await get(baseUrl + endpoint, ...pathVariables)
+            if (response.status === "OK") {
+                resolve(responseToContentMapper(response))
+            } else {
+                reject(response.errorMessages)
+            }
+        } catch (error) {
+            reject(error)
+        }
+    })
 }
 
 // function usePostForObject(endpoint, object, ...pathVariables) {
@@ -29,7 +30,7 @@ class TreasureHuntApiService {
     getAvailableHunts() {
         return useGet(
             "/list",
-            (response) => response.treasureHunts.map(huntObject => constructAvailableHunt(huntObject))
+            (response) => response.treasureHunts
         )
     }
 
