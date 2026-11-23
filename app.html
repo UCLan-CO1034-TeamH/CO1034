@@ -7,13 +7,39 @@
 
     <title>TreasurePleasure</title>
 
-    <link rel="stylesheet href"="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
   </head>
 
   <body>
 
-    <span id="mainMenuButtons">
+    <span id="blockEnterName">
+      <form
+        id="formEnterName"
+        onsubmit="enterName(); return false"
+      >
+
+        <p id="paragraphEnterName">Enter your name:</p>
+
+        <input
+          type="text"
+          id="inputName"
+          name="name"
+          placeholder="Your name"
+          required
+        />
+
+        <div>
+          <input type="submit" value="Use this name">
+        </div>
+
+      </form>
+    </span>
+
+    <div id="mainMenuButtons" class="hidden">
+
+      <p>Welcome, <span id="textName"></span>!</p>
+
       <div>
         <button id="browseOfficialGames" onclick="browseOfficialGames()">Browse official games</button>
       </div>
@@ -21,7 +47,7 @@
       <div>
         <button id="playSyntheticGame" onclick="playSyntheticGame()">Play a synthetic game</button>
       </div>
-    </span>
+    </div>
 
     <p id="loading" class="hidden">Loading...</p>
 

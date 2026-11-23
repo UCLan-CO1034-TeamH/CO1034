@@ -19,7 +19,7 @@ async function myFetch(url, method, body, pathVariables = []) {
 }
 
 
-function get(url, ...pathVariables) {
+async function get(url, ...pathVariables) {
     return myFetch(url, "GET", undefined, pathVariables)
 }
 
