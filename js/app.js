@@ -3,16 +3,6 @@
 const huntApiService = new TreasureHuntApiService()
 let sessionService = null;
 
-const elementsIds = {
-    blockAvailableOfficialHunts: "availableOfficialHunts",
-    blockMainMenuButtons: "mainMenuButtons",
-    buttonBrowseOfficialGames: "browseOfficialGames",
-    buttonPlaySyntheticGame: "playSyntheticGame",
-    paragraphLoading: "loading",
-    paragraphSelectHunt: "selectHunt",
-
-}
-
 async function getAvailableHunts() {
     let result = []
     const hunts = await huntApiService.getAvailableHunts()
@@ -24,43 +14,15 @@ async function getAvailableHunts() {
     return result
 }
 
-const invisibilityClassName = "hidden"
-
-function disableElementVisibility(element) {
-    element.classList.remove(invisibilityClassName)
-}
-
-function enableElementVisibility(element) {
-    element.classList.add(invisibilityClassName)
-}
-
-function toggleElementVisibility(element) {
-    element.classList.toggle(invisibilityClassName)
-}
-
-function disableIdVisibility(id) {
-    disableElementVisibility(document.getElementById(id))
-}
-
-function enableIdVisibility(id) {
-    enableElementVisibility(document.getElementById(id))
-}
-
-function toggleIdVisibility(id) {
-    toggleElementVisibility(document.getElementById(id))
-}
-
 function browseOfficialGames() {
-    disableIdVisibility(elementsIds.blockMainMenuButtons)
-    enableIdVisibility(elementsIds.paragraphLoading)
-    const blockAvailableOfficialHunts = document.getElementById(elementsIds.blockAvailableOfficialHunts)
+    const buttonBrowseOfficialGames = document.getElementById("browseOfficialGames")
+    const loadingAvailableHunts = document.createElement("p")
+    loadingAvailableHunts.textContent = "Loading available hunts..."
+    buttonBrowseOfficialGames.replaceWith(loadingAvailableHunts)
+    document.getElementById("playSyntheticGame")?.remove()
     huntApiService.getAvailableHunts()
-        .then(hunts => {
-            hunts.forEach(hunt => {
-                const  blockIndividualHunt = document.createElement("div")
-                const buttonIndividualHunt = document.createElement("button")
-                buttonIndividualHunt.onclick
-            })
+        .then((hunts) => {
+            console.log("Available hunts:", hunts)
         })
         .catch((error) => {
             
